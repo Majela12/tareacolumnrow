@@ -6,6 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
@@ -41,37 +42,34 @@ fun ProductCard() {
     Card(
         modifier = Modifier
             .padding(16.dp)
-            .fillMaxWidth(),
-        elevation = CardDefaults.cardElevation(8.dp)
+            .fillMaxWidth()
+
     ) {
 
         Column(
-            modifier = Modifier.padding(16.dp)
+            modifier = Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.Top,
+            horizontalAlignment = Alignment.Start
         ) {
 
-            Box {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.End
+            ) {
 
-                Image(
-                    painter = painterResource(id = R.drawable.pc),
-                    contentDescription = null,
-                    contentScale = ContentScale.Crop,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(250.dp)
-                )
-
-                Icon(
-                    imageVector = Icons.Default.Favorite,
-                    contentDescription = null,
-                    tint = Color.Yellow,
-                    modifier = Modifier
-                        .align(Alignment.TopEnd)
-                        .padding(16.dp)
-                )
             }
 
+            Image(
+                painter = painterResource(id = R.drawable.pc),
+                contentDescription = null,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(250.dp)
+                    .padding(bottom = 8.dp)
+            )
+
             Text(
-                text = "Nombre del Producto",
+                text = "PC gamer",
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(top = 8.dp)
@@ -96,18 +94,22 @@ fun ProductCard() {
 
                 Button(
                     onClick = { },
-                    modifier = Modifier.weight(1f)
                 ) {
-                    Text("Editar")
+                    Text(
+                        text = "Editar",
+                        modifier = Modifier.padding(horizontal = 30.dp)
+                    )
                 }
 
-                Spacer(modifier = Modifier.width(8.dp))
 
                 Button(
                     onClick = { },
-                    modifier = Modifier.weight(1f)
+
                 ) {
-                    Text("Eliminar")
+                    Text(
+                        text = "Eliminar",
+                        modifier = Modifier.padding(horizontal = 30.dp)
+                    )
                 }
             }
         }
