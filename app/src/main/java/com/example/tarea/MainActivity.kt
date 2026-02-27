@@ -85,7 +85,7 @@ fun ProductCard() {
             )
 
             Text(
-                text = "Descripción del producto con detalles importantes, características y beneficios.",
+                text = "Descripción del producto: detalles importantes, características y beneficios(blabla).",
                 modifier = Modifier.padding(vertical = 8.dp)
             )
 
@@ -150,5 +150,165 @@ fun TutorialScreen() {
             modifier = Modifier.padding(16.dp),
             textAlign = TextAlign.Justify
         )
+    }
+}
+
+
+@Preview(showSystemUi = true)
+@Composable
+fun PantallaPerfil() {
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+
+        Image(
+            painter = painterResource(id = R.drawable.perfil),
+            contentDescription = null,
+            modifier = Modifier
+                .size(120.dp)
+                .padding(top = 16.dp)
+        )
+
+        Text(
+            text = "Julia Pérez",
+            fontSize = 22.sp,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(top = 8.dp)
+        )
+
+        Text(
+            text = "Desarrollador Android apasionado por la tecnología y el diseño.",
+            textAlign = TextAlign.Center,
+            modifier = Modifier.padding(vertical = 8.dp)
+        )
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceEvenly
+        ) {
+            Text("150 Posts", textAlign = TextAlign.Center)
+            Text("2.3K Seguidores", textAlign = TextAlign.Center)
+            Text("980 Likes", textAlign = TextAlign.Center)
+        }
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 16.dp),
+            horizontalArrangement = Arrangement.SpaceEvenly
+        ) {
+
+            Button(onClick = { }) {
+                Text("Seguir")
+            }
+
+            OutlinedButton(onClick = { }) {
+                Text("Mensaje")
+            }
+        }
+
+        Text(
+            text = "Intereses",
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 16.dp)
+        )
+
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceEvenly
+        ) {
+            Text(
+                text = "Ciclismo",
+                modifier = Modifier
+                    .background(Color.LightGray)
+                    .padding(8.dp)
+            )
+
+            Text(
+                text = "Programación",
+                modifier = Modifier
+                    .background(Color.LightGray)
+                    .padding(8.dp)
+            )
+
+            Text(
+                text = "UI/UX",
+                modifier = Modifier
+                    .background(Color.LightGray)
+                    .padding(8.dp)
+            )
+        }
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 8.dp),
+            horizontalArrangement = Arrangement.SpaceEvenly
+        ) {
+            Text(
+                text = "Música",
+                modifier = Modifier
+                    .background(Color.LightGray)
+                    .padding(8.dp)
+            )
+
+            Text(
+                text = "Viajes",
+                modifier = Modifier
+                    .background(Color.LightGray)
+                    .padding(8.dp)
+            )
+
+            Text(
+                text = "Gaming",
+                modifier = Modifier
+                    .background(Color.LightGray)
+                    .padding(8.dp)
+            )
+        }
+
+        Text(
+            text = "Proyectos Recientes",
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 24.dp)
+        )
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 8.dp)
+        ) {
+
+            Image(
+                painter = painterResource(id = R.drawable.perfil),
+                contentDescription = null,
+                modifier = Modifier.size(100.dp)
+            )
+
+            Column(
+                modifier = Modifier.padding(start = 8.dp)
+            ) {
+                Text(
+                    text = "App de Ciclismo",
+                    fontWeight = FontWeight.Bold
+                )
+                Text("Aplicación para rastrear rutas de ciclismo con mapas y estadísticas.")
+                Button(
+                    onClick = {},
+                    modifier = Modifier.padding(top = 8.dp)
+                ) {
+                    Text("Ver más")
+                }
+            }
+        }
     }
 }
